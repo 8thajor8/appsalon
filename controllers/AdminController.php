@@ -12,7 +12,7 @@ class AdminController{
         session_start();
         isAdmin();
 
-        
+        debuguear($_SESSION);
         $fecha = $_GET['fecha'] ?? date('Y-m-d');
         $fechas = explode('-', $fecha);
         if(!checkdate($fechas[1], $fechas[2], $fechas[0])){
