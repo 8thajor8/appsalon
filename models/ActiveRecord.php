@@ -133,6 +133,7 @@ class ActiveRecord {
     // Consulta plena SQL(cuando los metodos del modelo no son suficientes)
     public static function SQL($consulta) {
         $query = $consulta;
+        debuguear($query);
         $resultado = self::consultarSQL($query);
         
         return $resultado ;
