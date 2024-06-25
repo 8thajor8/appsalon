@@ -12,7 +12,7 @@ class AdminController{
         session_start();
         isAdmin();
 
-        debuguear($_SESSION);
+        
         $fecha = $_GET['fecha'] ?? date('Y-m-d');
         $fechas = explode('-', $fecha);
         if(!checkdate($fechas[1], $fechas[2], $fechas[0])){
@@ -30,7 +30,7 @@ class AdminController{
         $consulta .= " LEFT OUTER JOIN servicios ";
         $consulta .= " ON servicios.id=citasServicios.servicioId ";
         $consulta .= " WHERE fecha =  '${fecha}' ";
-        
+        debuguear($consulta);
         $citas = AdminCita::SQL($consulta);
         
 
